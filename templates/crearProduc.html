@@ -1,0 +1,65 @@
+<link rel="stylesheet" type="text/css" href="{{url_for("static",
+filename="css/crearAdmin.css")}}"> 
+
+{% extends "./layout.html" %}
+{% block section_2 %}
+
+<h1>Crear Producto</h1>
+
+<!--  INPUT MARCA -->
+<form method="POST">
+    <div class="section_2_div">
+    <input
+        type="text"
+        class="form-control"
+        placeholder="Marca"
+        name="marca"
+    />
+
+        <!-- INPUT NOMBRE -->
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre"
+        name="nombre"      
+    />
+
+    <!-- INPUT CODIGO -->
+    <input
+        type="text"
+        class="form-control"
+        placeholder="Codigo"
+        name="codigo"      
+    />
+
+    <!-- INPUT COLOR -->
+    <input
+        type="text"
+        class="form-control"
+        placeholder="Color"
+        name="color"      
+    />
+    
+    <!-- INPUT PROCESADOR -->
+    <input
+        type="text"
+        class="form-control"
+        placeholder="Procesador"
+        name="procesador"
+    />
+    <!-- INPUT PROVEEDOR -->
+    <input
+        type="text"
+        class="form-control"
+        placeholder="Proveedor"
+        name="proveedor"
+    />
+    </div>
+    <button type="submit" class="btn btn-primary">Ingresar</button>
+
+
+</form>
+
+
+
+{% endblock section_2 %}

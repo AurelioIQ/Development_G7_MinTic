@@ -14,33 +14,15 @@ section_2 %}
   type="text"
   class="form-control"    
   placeholder="Ingresar Numero"    
-  name="cf_KEY"
+  name="doc_buscar"
   id=doc
 />
-<button type="submit" class="btn btn-primary" onclick="display()">Buscar</button>  
+<input type="submit" class="btn btn-primary" name="buscar" value="Buscar">
 </form>
 
 <form action="/buscarClienteFinal" , method="POST">
   <div class="section_2_div">
-
-    <!-- INPUT DOCUMENTO -->
-    <!-- {% if datos %}
-      <input
-      type="text"
-      class="form-control"
-      placeholder="Documento"
-      name="documento"
-      value="{{datos[0].id}}"
-      />
-    {% else %}
-      <input
-        type="text"
-        class="form-control"
-        placeholder="ID"
-        name="documento"
-      />
-    {% endif %} -->
-
+    
     <!-- INPUT NOMBRE -->
     {% if datos %}
       <input
