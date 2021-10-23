@@ -1,0 +1,201 @@
+<link rel="stylesheet" type="text/css" href="{{url_for("static",
+filename="css/buscarAdmin.css")}}"> {% extends './layout.html' %} {% block
+section_2 %}
+
+
+
+
+<h1>Buscar Administrador</h1>
+
+<!-- PARA BUSQUEDA -->
+<form class="buscar" action="" method="POST">
+  <!--DOCUMENTO BUSCAR-->
+  <input
+  type="text"
+  class="form-control"    
+  placeholder="Ingresar Documento"    
+  name="doc_buscar"
+  id=doc
+/>
+<input type="submit" class="btn btn-primary" name="buscar" value="Buscar"> 
+</form>
+
+<form action="/buscarAdmin" , method="POST">
+  <div class="section_2_div">
+
+    <!-- INPUT DOCUMENTO -->
+    <!-- {% if datos %}
+      <input
+      type="text"
+      class="form-control"
+      placeholder="Documento"
+      name="documento"
+      value="{{datos[0].id}}"
+      />
+    {% else %}
+      <input
+        type="text"
+        class="form-control"
+        placeholder="ID"
+        name="documento"
+      />
+    {% endif %} -->
+
+    <!-- INPUT NOMBRE -->
+    {% if datos %}
+      <input
+      type="text"
+      class="form-control"
+      placeholder="Nombre"
+      name="nombre"
+      value="{{datos[0].nombre_A}}"
+      />
+    {% else %}
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre"
+        name="nombre"
+      />
+    {% endif %}
+    
+    
+    <!-- INPUT APELLIDO -->
+    {% if datos %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Apellido"
+      name="apellido"
+      value="{{datos[0].apellido_A}}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Apellido"
+      name="apellido"
+    />
+    {% endif %}
+    
+    <!-- INPUT GENERO -->    
+    {% if datos %}
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Genero"
+    name="genero"
+    value="{{datos[0].genero_A}}"
+  />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Genero"
+      name="genero"      
+    />
+    {% endif %}
+
+    <!-- INPUT DOCUMENTO -->
+    {% if datos %}
+      <input
+      type="text"
+      class="form-control"
+      placeholder="Documento"
+      name="documento"
+      value="{{datos[0].documento_A}}"
+      />
+    {% else %}
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Documento"
+        name="documento"
+      />
+    {% endif %}
+    
+
+    <!-- INPUT DIERECCION -->
+    {% if datos %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Direccion"
+      name="direccion"
+      value="{{datos[0].direccion_A}}"
+    />
+    {% else %}
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Direccion"
+    name="direccion"    
+  />
+    {% endif %}
+
+    <!-- INPUT EMAIL -->    
+    {% if datos %}
+    <input
+    type="email"
+    class="form-control"
+    id="exampleInputEmail1"
+    aria-describedby="emailHelp"
+    placeholder="Enter email"
+    name="email"
+    value="{{datos[0].email_A}}"
+  />
+    {% else %}
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter email"
+      name="email"      
+    />
+    {% endif %}
+
+    <!-- INPUT TELEFONO -->    
+    {% if datos %}
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Numero telefonico"
+    name="telefono"
+    value="{{datos[0].telefono_A}}"
+  />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Numero telefonico"
+      name="telefono"      
+    />
+    {% endif %}
+
+    <!-- INPUT CEL -->    
+    {% if datos %}
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Numero celular"
+    name="cel"
+    value="{{datos[0].cel_A}}"
+  />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Numero celular"
+      name="cel"      
+    />
+    {% endif %}
+  </div>
+  <!-- BOTONES  -->
+  <div lass="btn_Eli_Edi">
+    <input type="submit" class="btn btn-primary" name="editar" value="Editar">
+    <input type="submit" class="btn btn-primary" name="eliminar" value="Eliminar">
+  </div>
+  
+</form>
+{% endblock section_2 %}
