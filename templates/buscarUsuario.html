@@ -5,7 +5,7 @@ section_2 %}
 
 
 
-<h1>Buscar Administrador</h1>
+<h1>Buscar Usuario</h1>
 
 <!-- PARA BUSQUEDA -->
 <form class="buscar" action="" method="POST">
@@ -20,26 +20,8 @@ section_2 %}
 <input type="submit" class="btn btn-primary" name="buscar" value="Buscar"> 
 </form>
 
-<form action="/buscarAdmin" , method="POST">
-  <div class="section_2_div">
-
-    <!-- INPUT DOCUMENTO -->
-    <!-- {% if datos %}
-      <input
-      type="text"
-      class="form-control"
-      placeholder="Documento"
-      name="documento"
-      value="{{datos[0].id}}"
-      />
-    {% else %}
-      <input
-        type="text"
-        class="form-control"
-        placeholder="ID"
-        name="documento"
-      />
-    {% endif %} -->
+<form action="/buscarUsuario" , method="POST">
+  <div class="section_2_div">    
 
     <!-- INPUT NOMBRE -->
     {% if datos %}
@@ -48,7 +30,7 @@ section_2 %}
       class="form-control"
       placeholder="Nombre"
       name="nombre"
-      value="{{datos[0].nombre_A}}"
+      value="{{datos[0].nombre}}"
       />
     {% else %}
       <input
@@ -67,7 +49,7 @@ section_2 %}
       class="form-control"
       placeholder="Apellido"
       name="apellido"
-      value="{{datos[0].apellido_A}}"
+      value="{{datos[0].apellido}}"
     />
     {% else %}
     <input
@@ -85,7 +67,7 @@ section_2 %}
     class="form-control"
     placeholder="Genero"
     name="genero"
-    value="{{datos[0].genero_A}}"
+    value="{{datos[0].genero}}"
   />
     {% else %}
     <input
@@ -103,7 +85,7 @@ section_2 %}
       class="form-control"
       placeholder="Documento"
       name="documento"
-      value="{{datos[0].documento_A}}"
+      value="{{datos[0].documento}}"
       />
     {% else %}
       <input
@@ -122,7 +104,7 @@ section_2 %}
       class="form-control"
       placeholder="Direccion"
       name="direccion"
-      value="{{datos[0].direccion_A}}"
+      value="{{datos[0].direccion}}"
     />
     {% else %}
     <input
@@ -142,7 +124,7 @@ section_2 %}
     aria-describedby="emailHelp"
     placeholder="Enter email"
     name="email"
-    value="{{datos[0].email_A}}"
+    value="{{datos[0].email}}"
   />
     {% else %}
     <input
@@ -162,7 +144,7 @@ section_2 %}
     class="form-control"
     placeholder="Numero telefonico"
     name="telefono"
-    value="{{datos[0].telefono_A}}"
+    value="{{datos[0].telefono}}"
   />
     {% else %}
     <input
@@ -180,7 +162,7 @@ section_2 %}
     class="form-control"
     placeholder="Numero celular"
     name="cel"
-    value="{{datos[0].cel_A}}"
+    value="{{datos[0].cel}}"
   />
     {% else %}
     <input
@@ -190,7 +172,47 @@ section_2 %}
       name="cel"      
     />
     {% endif %}
+
+    <!-- INPUT CARGO -->
+    {% if datos %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Cargo a ocupar"
+      name="cargo"
+      value="{{datos[0].cargo}}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Cargo a ocupar"
+      name="cargo"
+    />
+    {% endif %}
+
+    <!-- INPUT CLAVE -->
+    {% if datos %}    
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Clave"
+    name="clave"
+    value="{{datos[0].clave}}"
+  />
+    {% else %}
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Clave"
+    name="clave"
+  />
+    {% endif %}
+    
+
+
   </div>
+  
   <!-- BOTONES  -->
   <div lass="btn_Eli_Edi">
     <input type="submit" class="btn btn-primary" name="editar" value="Editar">

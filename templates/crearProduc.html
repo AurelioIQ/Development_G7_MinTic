@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="{{url_for("static",
 filename="css/crearAdmin.css")}}"> 
 
+
 {% extends "./layout.html" %}
 {% block section_2 %}
 
@@ -21,7 +22,7 @@ filename="css/crearAdmin.css")}}">
         type="text"
         class="form-control"
         placeholder="Nombre"
-        name="nombre"      
+        name="nombre"   
     />
 
     <!-- INPUT CODIGO -->
@@ -29,7 +30,7 @@ filename="css/crearAdmin.css")}}">
         type="text"
         class="form-control"
         placeholder="Codigo"
-        name="codigo"      
+        name="codigo"   procesador codigo  
     />
 
     <!-- INPUT COLOR -->
@@ -47,15 +48,8 @@ filename="css/crearAdmin.css")}}">
         placeholder="Procesador"
         name="procesador"
     />
-    <!-- INPUT PROVEEDOR -->
-    <input
-        type="text"
-        class="form-control"
-        placeholder="Proveedor"
-        name="proveedor"
-    />
-    </div>
-    <button type="submit" class="btn btn-primary">Ingresar</button>
+    
+    <input type="submit" class="btn btn-primary" name="ingresar" value="Ingresar">
 
 
 </form>
