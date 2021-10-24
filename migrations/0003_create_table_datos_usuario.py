@@ -1,6 +1,6 @@
 """
 create table datos_usuario
-date created: 2021-10-24 01:44:59.325051
+date created: 2021-10-24 13:25:14.251209
 """
 
 

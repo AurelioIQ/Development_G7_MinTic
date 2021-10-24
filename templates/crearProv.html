@@ -1,0 +1,60 @@
+<link rel="stylesheet" type="text/css" href="{{url_for("static",
+filename="css/buscarAdmin.css")}}"> 
+
+<!-- nombre nit direccion email telefono celular -->
+
+{% extends './layout.html' %}
+{% block section_2 %}
+
+<h1>Crear proveedores</h1>
+
+<form method="POST">
+  <div class="section_2_div">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nombre"
+      name="nombre" 
+    />
+    <!-- DOCUMENTO -->
+    <input
+      type="text"
+      class="form-control"
+      placeholder="NIT"
+      name="nit"     
+    />
+    
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Direccion"
+      name="direccion" 
+    />
+    <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        name="email" 
+      />  
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Numero telefonico"
+      name="telefono" 
+    />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Numero celular"
+      name="celular"
+    />  
+  </div>
+  <input type="submit" class="btn btn-primary" name="ingresar" value="Ingresar">
+  
+
+</form>
+
+
+{% endblock section_2 %}

@@ -92,7 +92,100 @@ def buscarAdmin():
         delete_U(doc_elim)
         return render_template("buscarUsuario.html")
     else:
-        return render_template("buscarUsuario.html") 
+        return render_template("buscarUsuario.html")
+
+# **************CREEAR PROVEEDOR*****************
+
+@app.route("/crearProv",methods=["GET", "POST"])
+def crearProv():
+    if 'ingresar' in request.values:
+        nombre=request.form.get('nombre')
+        nit=request.form.get('nit')
+        direccion=request.form.get('direccion')
+        email=request.form.get('email')
+        telefono=request.form.get('telefono')
+        celular=request.form.get('celular')
+
+        ingresar_datos_proveedor(nombre, nit, direccion, email, telefono, celular)
+
+    return render_template('crearProv.html')
+
+# BUSCARA PROVEEDOR
+@app.route("/buscarProv", methods=["GET", "POST"])
+def buscarProv():
+    
+    if 'buscar' in request.values:
+        nit_bus=request.form.get('nit_bus')
+        datos=select_Prov(nit_bus)
+        return render_template("buscarProv.html", datos=datos)
+            
+    
+    if 'editar' in request.values:
+        nombre=request.form.get('nombre')
+        nit=request.form.get('nit')
+        direccion=request.form.get('direccion')
+        email=request.form.get('email')
+        telefono=request.form.get('telefono')
+        celular=request.form.get('cel')
+
+        edit_Prov(nombre, nit, direccion, email, telefono, celular)
+        datos=select_Prov(nit)
+
+        return render_template("buscarProv.html", datos=datos)
+    
+    if 'eliminar' in request.values:
+        doc_elim=request.form.get('nit')
+        delete_Prov(doc_elim)
+        return render_template("buscarProv.html")
+    else:
+        return render_template("buscarProv.html")
+
+
+
+# **************CREAR PRODUCTO*******************
+
+
+@app.route("/crearProduc",methods=["GET", "POST"])
+def crearProduc():
+
+    if 'ingresar' in request.values:
+        marca=request.form.get('marca')
+        nombre=request.form.get('nombre')
+        codigo=request.form.get('codigo')
+        color=request.form.get('color')
+        procesador=request.form.get('procesador')
+
+        ingresar_datos_producto(marca,nombre,codigo,color,procesador)
+
+    return render_template('crearProduc.html')
+
+# BUSCARA PRODUCTO
+@app.route("/buscarProduc", methods=["GET", "POST"])
+def buscarProduc():
+    
+    if 'buscar' in request.values:
+        cod_bus=request.form.get('cod_bus')
+        datos=select_P(cod_bus)
+        return render_template("buscarProduc.html", datos=datos)
+            
+    
+    if 'editar' in request.values:
+        marca=request.form.get('marca')
+        nombre=request.form.get('nombre')
+        codigo=request.form.get('codigo')
+        color=request.form.get('color')
+        procesador=request.form.get('procesador')
+
+        edit_P(marca,nombre,codigo,color,procesador)
+        datos=select_P(codigo)
+        return render_template("buscarProduc.html", datos=datos)
+    
+    if 'eliminar' in request.values:
+        doc_elim=request.form.get('codigo')
+        delete_P(doc_elim)
+        return render_template("buscarProduc.html")
+    else:
+        return render_template("buscarProduc.html")
 
 # # BUSCAR CLIENTE FINAL
 # @app.route("/buscarClienteFinal", methods=["GET", "POST"])

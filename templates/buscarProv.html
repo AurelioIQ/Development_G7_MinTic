@@ -5,23 +5,23 @@ section_2 %}
 
 
 
-<h1>Buscar Cliente Final</h1>
+<h1>Buscar Proveedores</h1>
 
 <!-- PARA BUSQUEDA -->
 <form class="buscar" action="" method="POST">
-  <!--DOCUMENTO BUSCAR-->
+  <!-- INPUT id -->
   <input
   type="text"
   class="form-control"    
   placeholder="Ingresar Numero"    
-  name="doc_buscar"
-  id=doc
+  name="nit_bus"
 />
 <input type="submit" class="btn btn-primary" name="buscar" value="Buscar">
 </form>
 
-<form action="/buscarClienteFinal" , method="POST">
+<form action="/buscarProv" , method="POST">
   <div class="section_2_div">
+
     
     <!-- INPUT NOMBRE -->
     {% if datos %}
@@ -30,7 +30,7 @@ section_2 %}
       class="form-control"
       placeholder="Nombre"
       name="nombre"
-      value="{{datos[0].nombre_CF}}"
+      value="{{datos[0].nombre}}"
       />
     {% else %}
       <input
@@ -40,62 +40,25 @@ section_2 %}
         name="nombre"
       />
     {% endif %}
-    
-    
-    <!-- INPUT APELLIDO -->
-    {% if datos %}
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Apellido"
-      name="apellido"
-      value="{{datos[0].apellido_CF}}"
-    />
-    {% else %}
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Apellido"
-      name="apellido"
-    />
-    {% endif %}
-    
-    <!-- INPUT GENERO -->    
-    {% if datos %}
-    <input
-    type="text"
-    class="form-control"
-    placeholder="Genero"
-    name="genero"
-    value="{{datos[0].genero_CF}}"
-  />
-    {% else %}
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Genero"
-      name="genero"      
-    />
-    {% endif %}
 
-    <!-- INPUT DOCUMENTO -->
+    <!-- INPUT NIT -->
     {% if datos %}
       <input
       type="text"
       class="form-control"
-      placeholder="Documento"
-      name="documento"
-      value="{{datos[0].documento_CF}}"
+      placeholder="NIT"
+      name="nit"
+      value="{{datos[0].nit}}"
       />
     {% else %}
       <input
         type="text"
         class="form-control"
-        placeholder="ID"
-        name="documento"
+        placeholder="NIT"
+        name="nit"
       />
-    {% endif %}    
-
+    {% endif %}
+    
     <!-- INPUT DIERECCION -->
     {% if datos %}
     <input
@@ -103,7 +66,7 @@ section_2 %}
       class="form-control"
       placeholder="Direccion"
       name="direccion"
-      value="{{datos[0].direccion_CF}}"
+      value="{{datos[0].direccion}}"
     />
     {% else %}
     <input
@@ -123,7 +86,7 @@ section_2 %}
     aria-describedby="emailHelp"
     placeholder="Enter email"
     name="email"
-    value="{{datos[0].email_CF}}"
+    value="{{datos[0].email}}"
   />
     {% else %}
     <input
@@ -143,7 +106,7 @@ section_2 %}
     class="form-control"
     placeholder="Numero telefonico"
     name="telefono"
-    value="{{datos[0].telefono_CF}}"
+    value="{{datos[0].telefono}}"
   />
     {% else %}
     <input
@@ -161,7 +124,7 @@ section_2 %}
     class="form-control"
     placeholder="Numero celular"
     name="cel"
-    value="{{datos[0].cel_CF}}"
+    value="{{datos[0].celular}}"
   />
     {% else %}
     <input
