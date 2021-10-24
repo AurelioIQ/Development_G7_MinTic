@@ -1,16 +1,47 @@
 from flask import Flask,redirect,url_for,render_template,request
-
+from flask_login import LoginManager,login_user,logout_user,login_required, current_user,UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 from models import *
 from config import dev
+
 
 app=Flask(__name__)
 app.config.from_object(dev)
 
 db.init_app(app)
 
-@app.route('/',methods=['GET','POST'])
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = '/login'
+
+@login_manager.user_loader 
+def user_loader(user):
+    #TODO change here
+    return render_template('layout.html') #revision
+
+
+
+
+
+
+@app.route('/')
 def index():    
-    return render_template("layout.html")
+    return render_template("home.html")
+
+@app.route("/login", methods=["GET","POST"])
+def login():
+    if request.method=='POST':
+        userid= request.values['username']
+        password= request.values['password']  
+        user = Datos_Usuario.get(email=userid, clave=password)
+        if  user:
+            user_loader(user)
+            return render_template('layout.html')
+        else :
+            return render_template('home.html') #usuario=userid, clave=password) 
+    else :
+        return render_template('login.html')
+
 
 # ****************ADMINISTRADOR*********************
 
