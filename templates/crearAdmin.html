@@ -1,9 +1,6 @@
 <link rel="stylesheet" type="text/css" href="{{url_for("static",
-filename="css/buscarAdmin.css")}}"> 
-
-
-{% extends './layout.html' %}
-{% block section_2 %}
+filename="css/buscarAdmin.css")}}"> {% extends './layout.html' %} {% block
+section_2 %}
 
 <h1>Crear Administrador</h1>
 
@@ -22,7 +19,7 @@ filename="css/buscarAdmin.css")}}">
       type="text"
       class="form-control"
       placeholder="Apellido"
-      name="apellido"      
+      name="apellido"
     />
 
     <!-- INPUT GENERO -->
@@ -30,7 +27,7 @@ filename="css/buscarAdmin.css")}}">
       type="text"
       class="form-control"
       placeholder="Genero"
-      name="genero"      
+      name="genero"
     />
 
     <!-- INPUT DOCUMENTO -->
@@ -38,9 +35,9 @@ filename="css/buscarAdmin.css")}}">
       type="text"
       class="form-control"
       placeholder="Numero documento"
-      name="documento"      
+      name="documento"
     />
-    
+
     <!-- INPUT DIERECCION -->
     <input
       type="text"
@@ -51,13 +48,13 @@ filename="css/buscarAdmin.css")}}">
 
     <!-- INPUT EMAIL -->
     <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        name="email"
-      />
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter email"
+      name="email"
+    />
 
     <!-- INPUT TELEFONO -->
     <input
@@ -73,7 +70,7 @@ filename="css/buscarAdmin.css")}}">
       class="form-control"
       placeholder="Numero celular"
       name="cel"
-    />  
+    />
     <!-- INPUT CARGO -->
     <input
       type="text"
@@ -82,16 +79,54 @@ filename="css/buscarAdmin.css")}}">
       name="cargo"
     />
     <!-- INPUT CLAVE -->
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Clave"
-      name="clave"
-    />
+    <input type="text" class="form-control" placeholder="Clave" name="clave" />
   </div>
-  
-  <input type="submit" class="btn btn-primary" name="ingresar" value="Ingresar">
+
+  <input
+    type="submit"
+    class="btn btn-primary"
+    name="ingresar"
+    value="Ingresar"
+  />
 </form>
 
+{% endblock section_2 %} {% block section_1 %}
 
-{% endblock section_2 %}  
+<!-- BOTON DESPLEGABLE ADMINISTRADOR -->
+{% if rango == 'Superadministrador' %}
+<div class="desplegable">
+  <button type="button" class="btn btn-primary">Administrador</button>
+  <ul class="links">
+    <a href="/crearAdmin">Crear</a>
+    <a href="/buscarUsuario">Buscar</a>
+  </ul>
+</div>
+{% endif %} {% if rango == 'Superadministrador' or rango == 'Administrador' %}
+<!-- BOTON DESPLEGABLE CLIENTE FINAL -->
+<div class="desplegable">
+  <button type="button" class="btn btn-primary">Cliente final</button>
+  <ul class="links">
+    <a href="/crearAdmin">Crear</a>
+    <a href="/buscarUsuario">Buscar</a>
+  </ul>
+</div>
+{% endif %}
+{% if rango == 'Superadministrador' or rango == 'Administrador' or rango == 'Usuario' %}
+<!-- BOTON DESPLEGABLE PROVEEDOR -->
+<div class="desplegable">
+  <button type="button" class="btn btn-primary">Proveedor</button>
+  <ul class="links">
+    <a href="/crearProv">Crear</a>
+    <a href="/buscarProv">Buscar</a>
+  </ul>
+</div>
+{% endif %} {% if rango == 'Superadministrador' or rango == 'Administrador' or rango == 'Usuario' %}
+<!-- BOTON DESPLEGABLE PRODUCTO -->
+<div class="desplegable">
+  <button type="button" class="btn btn-primary">Producto</button>
+  <ul class="links">
+    <a href="/crearProduc">Crear</a>
+    <a href="/buscarProduc">Buscar</a>
+  </ul>
+</div>
+{% endif %} {% endblock %}
